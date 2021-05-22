@@ -16,15 +16,18 @@ const Form = ({ addItem }) => {
   return (
     <form>
       <p>
-        <input
-          name="item"
-          onChange={(e) => {
-            setItem(e.target.value);
-          }}
-          placeholder="New ToDo"
-          type="text"
-          value={item}
-        />
+        <label>
+          Add item <br />
+          <input
+            name="item"
+            onChange={(e) => {
+              setItem(e.target.value);
+            }}
+            placeholder="Add item"
+            type="text"
+            value={item}
+          />
+        </label>
       </p>
       <p>
         <button

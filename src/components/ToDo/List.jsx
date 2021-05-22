@@ -1,5 +1,5 @@
 const List = ({ items, removeItem }) => {
-  return (
+  return items.length > 0 ? (
     <ul>
       {items.map(({ id, content }) => (
         <li key={id}>
@@ -15,6 +15,8 @@ const List = ({ items, removeItem }) => {
         </li>
       ))}
     </ul>
+  ) : (
+    <p>no data</p>
   );
 };
 
