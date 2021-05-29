@@ -3,14 +3,14 @@ import List from './List';
 import Form from './Form';
 
 const ToDo = () => {
-  const { items, addItem, removeItem } = useItems();
+  const { items, addItem, removeItem, isLoading } = useItems();
 
   return (
     <>
       <h1>ToDo Component</h1>
 
       <h2>Item List</h2>
-      <List items={items} removeItem={removeItem} />
+      <List items={items} removeItem={removeItem} isLoading={isLoading} />
 
       <h2>Add Item</h2>
       <Form addItem={addItem} />

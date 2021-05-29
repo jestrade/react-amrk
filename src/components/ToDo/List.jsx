@@ -1,12 +1,14 @@
-const List = ({ items, removeItem }) => {
-  return items.length > 0 ? (
+const List = ({ items, removeItem, isLoading }) => {
+  return isLoading ? (
+    <p>loading ...</p>
+  ) : items.length > 0 ? (
     <ul>
-      {items.map(({ id, content }) => (
-        <li key={id}>
-          {content}
+      {items.map(({ _id, content, createdAt }) => (
+        <li key={_id}>
+          {content} - {createdAt}
           <button
             onClick={() => {
-              removeItem(id);
+              removeItem(_id);
             }}
             type="button"
           >

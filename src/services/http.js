@@ -11,7 +11,7 @@ const post = (url, data) => {
 };
 
 const remove = (url, data) => {
-  return axios.delete(`${api}${url}`, data);
+  return axios.delete(`${api}${url}`, { data });
 };
 
 export { get, post, remove };
