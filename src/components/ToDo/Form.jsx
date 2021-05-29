@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const Form = ({ addItem }) => {
   const [item, setItem] = useState('');
@@ -15,10 +17,12 @@ const Form = ({ addItem }) => {
 
   return (
     <form>
-      <p>
+      <div>
         <label>
-          Add item <br />
-          <input
+          <TextField
+            id="filled-basic"
+            label="Items"
+            variant="filled"
             name="item"
             onChange={(e) => {
               setItem(e.target.value);
@@ -28,17 +32,19 @@ const Form = ({ addItem }) => {
             value={item}
           />
         </label>
-      </p>
-      <p>
-        <button
+      </div>
+      <div>
+        <Button
+          color="primary"
           onClick={() => {
             handleClick();
           }}
           type="button"
+          variant="contained"
         >
           Add
-        </button>
-      </p>
+        </Button>
+      </div>
     </form>
   );
 };

@@ -1,20 +1,26 @@
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import useItems from './../../hooks/useItems';
 import List from './List';
 import Form from './Form';
 
 const ToDo = () => {
-  const { items, addItem, removeItem, isLoading } = useItems();
+  const { items, isLoading, addItem, removeItem } = useItems();
 
   return (
-    <>
-      <h1>ToDo Component</h1>
-
-      <h2>Item List</h2>
-      <List items={items} removeItem={removeItem} isLoading={isLoading} />
-
-      <h2>Add Item</h2>
-      <Form addItem={addItem} />
-    </>
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <Typography variant="h3">ToDo Component</Typography>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography variant="h4">Item List</Typography>
+        <List items={items} isLoading={isLoading} removeItem={removeItem} />
+      </Grid>
+      <Grid item xs={6}>
+        <Typography variant="h4">Add Item</Typography>
+        <Form addItem={addItem} />{' '}
+      </Grid>
+    </Grid>
   );
 };
 
