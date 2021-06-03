@@ -27,14 +27,12 @@ const useItems = () => {
   const addItem = (item) => {
     http.post(TASKS, item).then((response) => {
       //solución 1
-      getItems();
+      //getItems();
 
       //solución 2
-      /*
       const { data } = response;
-      const newItems = [...items, data];
+      const newItems = [data, ...items];
       setItems(newItems);
-      */
     });
   };
 
@@ -44,13 +42,11 @@ const useItems = () => {
     };
     http.remove(TASKS, item).then(() => {
       //solución 1
-      getItems();
+      //getItems();
 
       //solución 2
-      /*
       const newArray = items.filter(({ _id }) => _id !== id);
       setItems(newArray);
-      */
     });
   };
 

@@ -1,7 +1,7 @@
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import useItems from './../../hooks/useItems';
-import List from './List';
+import Items from './Items';
 import Form from './Form';
 
 const ToDo = () => {
@@ -14,7 +14,7 @@ const ToDo = () => {
       </Grid>
       <Grid item xs={6}>
         <Typography variant="h4">Item List</Typography>
-        <List items={items} isLoading={isLoading} removeItem={removeItem} />
+        <Items items={items} isLoading={isLoading} removeItem={removeItem} />
       </Grid>
       <Grid item xs={6}>
         <Typography variant="h4">Add Item</Typography>
