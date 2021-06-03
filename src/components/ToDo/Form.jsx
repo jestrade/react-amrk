@@ -18,28 +18,27 @@ const Form = ({ addItem }) => {
   return (
     <form>
       <div>
-        <label>
-          <TextField
-            id="filled-basic"
-            label="Items"
-            variant="filled"
-            name="item"
-            onChange={(e) => {
-              setItem(e.target.value);
-            }}
-            placeholder="Add item"
-            type="text"
-            value={item}
-          />
-        </label>
-      </div>
-      <div>
+        <TextField
+          id="filled-basic"
+          helperText=""
+          label="Items"
+          variant="filled"
+          name="item"
+          onChange={(e) => {
+            setItem(e.target.value);
+          }}
+          placeholder="Add item"
+          size="small"
+          type="text"
+          value={item}
+        />
         <Button
           color="primary"
           onClick={() => {
             handleClick();
           }}
           type="button"
+          size="large"
           variant="contained"
         >
           Add
