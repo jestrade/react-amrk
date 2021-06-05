@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import ToDo from './components/private/ToDo';
 import Main from './components/private/Main';
@@ -6,14 +7,24 @@ import SignUp from './components/public/SignUp';
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Header />
 
-      <ToDo />
-      <Main />
-      <Login />
-      <SignUp />
-    </>
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/todo">
+          <ToDo />
+        </Route>
+        <Route exact path="/">
+          <Main />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
