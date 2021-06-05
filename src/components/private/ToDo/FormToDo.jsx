@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-const Form = ({ addItem }) => {
+const FormToDo = ({ addItem }) => {
   const [item, setItem] = useState('');
   const handleClick = () => {
     if (item) {
@@ -32,6 +32,8 @@ const Form = ({ addItem }) => {
           type="text"
           value={item}
         />
+      </div>
+      <div>
         <Button
           color="primary"
           onClick={() => {
@@ -48,4 +50,4 @@ const Form = ({ addItem }) => {
   );
 };
 
-export default Form;
+export default FormToDo;

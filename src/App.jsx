@@ -1,19 +1,18 @@
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-
-import ToDo from './components/ToDo';
+import Header from './components/common/Header';
+import ToDo from './components/private/ToDo';
+import Main from './components/private/Main';
+import Login from './components/public/Login';
+import SignUp from './components/public/SignUp';
 
 const App = () => {
   return (
     <>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6">My App</Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
 
       <ToDo />
+      <Main />
+      <Login />
+      <SignUp />
     </>
   );
 };
