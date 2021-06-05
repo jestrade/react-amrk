@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-const FormLogin = () => {
+const FormLogin = ({ loginUser }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,7 +13,7 @@ const FormLogin = () => {
         password,
       };
 
-      console.log(user);
+      loginUser(user);
 
       setUsername('');
       setPassword('');

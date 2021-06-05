@@ -11,13 +11,11 @@ const useTweets = () => {
   const getTweets = () => {
     setIsLoading(true);
 
-    setTimeout(() => {
-      http.get(TWEETS).then((response) => {
-        const tweetList = response.data.data;
-        setTweets(tweetList);
-        setIsLoading(false);
-      });
-    }, 2000);
+    http.get(TWEETS).then((response) => {
+      const tweetList = response.data.data;
+      setTweets(tweetList);
+      setIsLoading(false);
+    });
   };
 
   useEffect(() => {
@@ -26,9 +24,7 @@ const useTweets = () => {
 
   const addTweet = (tweet) => {
     http.post(TWEETS, tweet).then((response) => {
-      const { data } = response;
-      const newTweets = [data, ...tweets];
-      setTweets(newTweets);
+      getTweets();
     });
   };
 

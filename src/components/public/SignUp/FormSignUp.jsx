@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-const FormSignUp = () => {
+const FormSignUp = ({ createUser }) => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -11,21 +11,23 @@ const FormSignUp = () => {
 
   const handleClick = () => {
     if (name && username && email && password && passwordConfirmation) {
-      const user = {
-        name,
-        username,
-        email,
-        password,
-        passwordConfirmation,
-      };
+      if (password === passwordConfirmation) {
+        const user = {
+          name,
+          username,
+          email,
+          password,
+          passwordConfirmation,
+        };
 
-      console.log(user);
+        createUser(user);
 
-      setName('');
-      setUsername('');
-      setEmail('');
-      setPassword('');
-      setPasswordConfirmation('');
+        setName('');
+        setUsername('');
+        setEmail('');
+        setPassword('');
+        setPasswordConfirmation('');
+      }
     }
   };
 
@@ -92,7 +94,7 @@ const FormSignUp = () => {
             setPasswordConfirmation(e.target.value);
           }}
           size="small"
-          type="text"
+          type="password"
           value={passwordConfirmation}
         />
       </div>
