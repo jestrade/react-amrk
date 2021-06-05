@@ -3,16 +3,16 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
 
-const Timeline = ({ items, isLoading, removeTweet }) => {
+const Timeline = ({ tweets, isLoading, removeTweet }) => {
   return isLoading ? (
     <p>loading ...</p>
-  ) : items.length > 0 ? (
+  ) : tweets.length > 0 ? (
     <List>
-      {items.map(({ _id, content, createdAt, user }) => (
+      {tweets.map(({ _id, content, createdAt, user }) => (
         <ListItem key={_id}>
           <ListItemText
-            primary={`${user.name} says: <br /> ${content}`}
-            secondary={createdAt}
+            primary={`@${user?.username || ''}`}
+            secondary={content}
           />
           <Button
             color="primary"

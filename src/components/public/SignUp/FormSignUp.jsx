@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-const FormSignUp = () => {
+const FormSignUp = ({ signup }) => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -19,7 +19,7 @@ const FormSignUp = () => {
         passwordConfirmation,
       };
 
-      console.log(user);
+      signup(user);
 
       setName('');
       setUsername('');
@@ -92,7 +92,7 @@ const FormSignUp = () => {
             setPasswordConfirmation(e.target.value);
           }}
           size="small"
-          type="text"
+          type="password"
           value={passwordConfirmation}
         />
       </div>
