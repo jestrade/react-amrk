@@ -42,6 +42,8 @@ const Header = () => {
             <li>
               <Button
                 type="button"
+                variant="outlined"
+                size="small"
                 onClick={() => {
                   logout();
                 }}
